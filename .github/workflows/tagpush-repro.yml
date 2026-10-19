@@ -1,0 +1,11 @@
+name: tagpush-repro
+on:
+  push:
+    tags:
+      - 'repro-v*'
+jobs:
+  fire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger proof
+        run: echo "triggered by ref=${{ github.ref }} ref_type=${{ github.ref_type }} actor=${{ github.actor }} event=${{ github.event_name }}"
